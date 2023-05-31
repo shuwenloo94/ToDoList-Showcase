@@ -44,20 +44,22 @@ fun ListScreen(
         when (paged.loadState.prepend) {
             is LoadState.Loading -> LoadingText()
             is LoadState.Error -> ErrorText((paged.loadState.prepend as LoadState.Error).error)
-            else -> { List(paged, onDelete, onToggle) }
+            else -> {}
         }
 
         when (paged.loadState.append) {
             is LoadState.Loading -> LoadingText()
             is LoadState.Error -> ErrorText((paged.loadState.append as LoadState.Error).error)
-            else -> { List(paged, onDelete, onToggle) }
+            else -> {}
         }
 
         when (paged.loadState.refresh) {
             is LoadState.Loading -> LoadingText()
             is LoadState.Error -> ErrorText((paged.loadState.refresh as LoadState.Error).error)
-            else -> { List(paged, onDelete, onToggle) }
+            else -> {}
         }
+
+        List(paged, onDelete, onToggle)
     }
 }
 
@@ -86,6 +88,7 @@ fun ErrorText(error:Throwable) {
 @Composable
 fun List(
     paged: LazyPagingItems<ToDoItemUiModel>,
+//    paged: PagingData<ToDoItemUiModel>,
     onDelete:(Int) -> Unit,
     onToggle:(Int, Boolean) -> Unit
 ) {
