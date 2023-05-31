@@ -9,5 +9,6 @@ https://github.com/shuwenloo94/ToDoList-Showcase/assets/15745473/ae1c4b9b-747e-4
 * Room as the backing database
 * Navigation with Compose
 * Pagination with using LazyPagingItems and Compose's VerticalPager
+* Simple use of Material Design Components
 * Simple integration with WorkManager
 
